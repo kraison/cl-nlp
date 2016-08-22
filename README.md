@@ -16,6 +16,6 @@ lib/ directory
 
 This version supports English, French, German, Portuguese, Spanish and Italian.
 
-Pre-trained data sets are available at http://nyx.chatsubo.net/~raison/languages.tar.gz
+Pre-trained data sets are available at http://chatsubo.net/~raison/languages.tar.gz
 
 I can make the various corpora available for retraining on an as-needed basis.
