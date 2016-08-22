@@ -1,0 +1,62 @@
+(in-package :nlp)
+
+(def-pos-map :isst
+    (("A" "ADJ")
+     ("AP" "PRON")
+     ("B" "ADV")
+     ("BN" "ADV")
+     ("C" "CONJ")
+     ("CC" "CONJ")
+     ("CS" "CONJ")
+     ("DQ" "DET")
+     ("DD" "DET")
+     ("DE" "DET")
+     ("DI" "DET")
+     ("DR" "DET")
+     ("DT"  "DET")
+     ("E" "ADP")
+     ("EA" "ADP")
+     ("I" "X")
+     ("N" "NUM")
+     ("NO"  "NUM")
+     ("PD"  "PRON")
+     ("PI"  "PRON")
+     ("PP"  "PRON")
+     ("PQ"  "PRON")
+     ("PR"  "PRON")
+     ("PT"  "PRON")
+     ("PU"  ".")
+     ("RD" "DET")
+     ("RI"  "DET")
+     ("S" "NOUN")
+     ("SA"  "X")
+     ("SP"  "NOUN")
+     ("SW"  "NOUN")
+     ("V" "VERB")
+     ("X" "X")))
+
+(defun convert-paisa-file (in-file out-file)
+  "Convert a Paisa corpus file into standard word/pos format"
+  (with-open-file (stream out-file
+                          :direction :output
+                          :if-exists :supersede
+                          :if-does-not-exist :create)
+    (map-conll-corpus
+     (lambda (sentence pos-seq)
+       (dotimes (i (length sentence))
+         (format stream "~A/~A" (elt sentence i) (elt pos-seq i))
+         (if (= i (- (length sentence) 1))
+             (terpri stream)
+             (format stream " "))))
+     in-file)))
+
+(defun gather-paisa-symbols (file)
+  "Utility function that lists unique pos tags in a Paisa file"
+  (let ((symbols nil))
+    (map-conll-corpus
+     (lambda (sentence pos-seq)
+       (declare (ignore sentence))
+       (dotimes (i (length pos-seq))
+         (pushnew (elt pos-seq i) symbols :test 'equal)))
+     file)
+    symbols))

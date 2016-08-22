@@ -1,0 +1,454 @@
+5miles\NNP NN
+’s\POS VBP IN NNPS NNS PRP NNP VBZ
+alot\PRP RB
+animations\NNS
+anklets\NNS
+answercow\NN
+antidepressant\NN
+antidepressants\NNS
+anti-depressant\NN
+anti-depressants\NNS
+anti-glare\JJ
+antihistamines\NNS
+anular\JJ
+apache2\NNP NN
+applet\NN
+apt-get\NNP NN
+asap\RB
+asus\NNP
+autofocus\NN VB
+autofocuses\VBZ NNS
+auto-format\VB VBP
+auto-formats\VBZ
+auto-hide\VB VBP
+auto-hides\VBZ
+autohide\VB VBP
+autohides\VBZ
+auto-renew\VB
+auto-renews\VBZ
+avaya\NNP
+backlink\NN VB
+backlinks\NNS VBZ
+backoffice\NN
+backups\NNS
+baggages\NNS
+barcode\NN VB VBP
+barcodes\NNS VBZ
+bbq\NN VB VBZ
+bbqs\NNS VBZ
+bcc\NN VB
+bcc'd\VBD
+bcoz\CC RB IN
+b'coz\CC RB IN
+bitcoin\NN
+bitcoins\NNS
+bitmap\NN
+bitmaps\NNS
+blocker\NN
+blockers\NNS
+blog\NN
+blogs\NNS
+bluetooth\NN
+break-in\NN VB VBP
+breaks-in\VBZ
+breakroom\NN
+breakrooms\NNS
+browsers\NNS
+bsd\NNP
+build-essentials\NN NNS
+c++\NNP NN
+c4\NN NNP
+callback\NN
+cashback\NN
+cat5\NN
+cdma\NN NNP
+cdn\NN
+cellphone\NN
+cellphones\NNS
+centerpiece\NN
+centerpieces\NNS
+checkbox\NN
+checked-in\VBD JJ
+chillers\NNS
+chipset\NN
+chromecast\NN VB VBP
+clans\NNS
+clickthrough\NN VB VBP
+cmd\NN
+codec\NN
+codecs\NNS
+code-share\NN
+code-shares\NNS
+codeshare\NN
+codeshares\NNS
+co-found\VB VBP
+co-founded\VBD
+colour\NN VB VBP
+colours\NNS VBZ
+.com\NN
+config\NN VB VBP
+configs\NNS VBZ
+cpanel\NNP NN
+cyanogenmod\NNP NN
+datacenter\NN
+datacenters\NNS
+dataset\NN
+datasets\NNS
+detections\NNS
+detects\VBZ
+devo\NN NNP
+devolución\NN
+dialog\NN
+didnt\VBD
+differentiates\VBZ
+digiflip\NNP
+document_root\NN
+doesnt\VBZ
+dont\VBP
+doorbot\NN
+doorbots\NNS
+download\VB VBP
+downloads\VBZ
+dropbox\NNP NN
+drop-down\NN
+dropdown\NN
+duplicates\VBZ NNS
+e-bike\NN NNP
+e-book\NN
+ebook\NN
+e-books\NNS
+e-cigarette\NN
+e-cigarettes\NNS
+e-commerce\NN
+ecommerce\NN
+ecosystem\NN
+ecosystems\NNS
+elife\NN
+e-liquid\NN
+email\NN
+emails\NNS
+e-mails\NNS
+e-mail\NN
+embeds\VBZ
+e-release\NN
+e-releases\NNS
+erelease\NN
+ereleases\NNS
+/etc/motd\NN
+ethernet\NN
+euro\NN
+euros\NNS
+executable\NN JJ
+executables\NNS
+expedia\NNP
+experia\NNP
+extenders\NNS
+f5\NNP
+facebook\NNP
+favicon\NN
+favicons\NNS
+firefox\NNP
+flavour\NN VB VBP
+flavours\NNS VBZ
+folios\NNS
+fone\NN
+fonts\NNS
+foto\NN
+fotos\NNS
+freebsd\NNP
+ftp\NN
+gemstones\NNS
+geoip\NN VB VBP
+geoips\NNS VBZ
+gidget\NN NNP
+.gif\NN
+.gifs\NNS
+gif\NN
+gifs\NNS
+glades\NNS
+glibc\NN
+gmail\NNP
+google+\NNP
+grátis\JJ RB
+gsm\NN
+hamsters\NNS
+handsets\NNS
+hardwire\VB VBP NN
+hashtag\NN
+hashtags\NNS
+hdd\NN
+headers\NNS
+he/she\PRP
+homebase\NN
+homepage\NN
+hook-ups\NNS
+hostnames\NNS
+hotmail\NNP
+hotspot\NN
+hspa\NN
+hspa+\NN
+htc\NNP
+html\NN
+http\NN
+httpd\NN
+https\NN
+hyperlink\NN
+hyperlinks\NNS
+icloud\NNP
+ideapad\NNP
+imac\NNP
+imap\NN
+import/export\NN JJ
+in-game\JJ RB
+installers\NNS
+installs\VBZ NNS
+install/use\VB VBP
+integrations\NNS
+intolerances\NNS
+intranet\NN
+ip\NN
+ipad\NNP
+ipads\NNPS
+iphone\NNP
+i-phone\NNP
+iphones\NNPS
+ipod\NNP
+itunes\NNP
+jailbroken\JJ VBD VBN
+javascript\NN
+jde\NN
+jetblue\NNP
+jpg\NN
+jpgs\NNS
+.jpg\NN
+.jpgs\NNS
+json\NN
+kerberos\NN
+keypad\NN
+keywords\NNS
+kitkat\NNP
+knowledgebase\NN
+knowledgebases\NNS
+lenovo\NNP
+levees\NNS
+lib\NN
+libs\NNS
+linens\NNS
+linux\NNP
+localhost\NN
+log-in\NN VB VBZ
+login\NN VB VBP
+logon\VB VBP
+logout\VB VBP
+lol\VB
+macros\NNS NN
+mailto\VB NN
+mainpage\NN
+metadata\NN
+metascore\NN
+metoclopramide\NN
+mhz\NN
+microsd\NN
+mix-or-match\VB
+moderators\NNS
+motd\NN
+multi-domain\NN JJ
+multi-page\NN JJ
+multi-plot\NN JJ
+multi-trip\NN JJ
+mumbai\NNP
+n/a\JJ
+namecheap\NNP
+nameservers\NNS
+nano\NN JJ
+netbook\NN
+netboot\NN
+newbie\NN
+newswires\NNS
+nfc\NN
+nfs\NN
+nginx\NN NNP
+notations\NNS
+nuestra\NNP
+octa\JJ
+octa-core\JJ
+octacore\JJ
+offcourse\JJ
+offline\JJ
+one-click\JJ
+online\JJ
+on-page\JJ
+onsite\JJ
+openbsd\NNP
+opt-in\JJ VB
+opt-out\JJ VB
+opt-outs\NN
+orbitz\NNP
+.pdf\NN
+pdf\NN
+pdfs\NNS
+permissions\NNS
+pid\NN
+pixels\NNS
+playcast\NN
+playlists\NNS
+pls.\VBG RB VBP VB UH
+pls\VBG RB VBP VB UH
+plugin\VB VBP NN
+plugins\NNS
+plz\VBG RB VBP VB UH
+podcast\NN
+point-and-click\JJ VB VBP
+popup\NN VB
+postback\VB NN
+pre-fill\VB
+pre-made\JJ
+pre-requisites\JJ NNS
+prerequisites\JJ NNS
+pre-test\NN VB
+prev\JJ
+promo\NN
+promocode\NN
+promos\NNS
+punchline\NN
+pushbutton\NN
+quad-core\JJ
+qualcomm\NNP
+rdns\NN
+ready-to-use\JJ
+reboot\VB VBP
+recommenders\NNS
+recrawl\VB VBP
+recrawls\VBZ
+recruiters\NNS
+redhat\NNP
+redirect\NN
+redirects\VBZ NNS
+refills\VBZ NNS
+registrars\NNS
+re-install\VB VBP NN
+re-issue\VB VBP NN
+re-launch\VB VBP NN
+req.\VBP VB NN
+reqs\VBZ NNS
+resets\VBZ
+retries\VBZ NNS
+retweets\NNS VBZ
+re-view\VB VBP
+rfp\NN
+rhel7\NNP
+roadmap\NN
+rollout\VB VBP NN
+rom\NN
+roms\NNS
+routers\NNS
+rss\NN
+samsung\NNP
+sapphires\NNS
+selfie\NN
+setpoint\NN
+s/he\PRP
+shell-init\NN
+showcases\NNS VBZ
+signage\NN
+signout\VB VBP
+sign-up\NN VB VBP
+signup\NN VB VBP
+sign-ups\NNS
+signups\NNS
+skype\NNP
+slide-in\NN VB VBP
+slideshow\NN
+smartphone\NN
+smartphones\NNS
+sms\NN
+softwares\NNS NN
+specifcations\NNS
+spellings\NNS
+sq.ft.\NN NNS
+sql\NN
+ssh\NN VB VBP
+stats\NNS
+strikethrough\VB VBP NN
+stuffs\VBZ NNS NN
+subcommand\NN
+sub-domain\NN
+subdomain\NN
+sub-domains\NNS
+subdomains\NNS
+sub-menu\NN
+sub-menus\NNS
+submittals\NNS
+sudo\NN VB VBP
+suffices\VBZ
+sugars\NNS VBZ
+svn\NN NNP
+syphylis\NN
+sysadmin\NN
+talktime\NN
+taskbar\NN
+templates\NNS
+timeline\NN
+time-range\NN
+timeshare\NN
+timesheets\NNS
+timestamp\NN
+timezone\NN
+t-mobile\NNP NN
+toolbar\NN
+touchscreen\NN
+trackers\NNS
+tradeshows\NNS
+trade-up\VB VBP NN
+translators\NNS
+turn-around\JJ RP RB IN
+ubuntu\NNP NN
+ultrafone\NNP NN
+unfollow\VB VBP VBG VBZ
+unfollows\VBP VBG VBZ
+unfollowed\VBN
+uninstall\VB VBP NN
+unsub\VB VBP
+unsubscribe\VB VBP
+upload\VB VBP
+uploaded\VBD
+uploads\NNS VBZ
+uptime\NN
+url\NN
+usb\NN
+usecases\NNS
+username\NN
+usernames\NNS
+usgbc\NNP NN
+u-value\NN
+vaccinations\NNS
+vaio\NNP NN
+vcard\NN
+webex\NNP NN
+webform\NN
+webinar\NN
+webinars\NNS
+webpage\NN
+webserver\NN
+website\NN
+websites\NNS
+webstore\NN
+webstores\NNS
+white-label\VB VBP NN
+wi-fi\NN
+wifi\NN
+wildcard\NN
+workup\VB VBP NN
+xls\NN
+xlsx\NN
+xmradio\NNP NN
+xolo\NNP
+xperia\NNP
+yapta\NNP
+zenfone\NN NNP
+zenfone2\NN NNP
+zenpad\NN NNP
+zenphone\NN NNP
+zenphone2\NN NNP
+zipcode\NN
+z-wave\NNP NN
