@@ -73,8 +73,29 @@
 
 (defmethod extract-skip-trigrams ((language nlp:language) (tokens sequence)
                                   &key (skip 2) stem-p)
-  ;; FIXME: implement
-  )
+  (let ((skip-grams (make-hash-table :test 'equalp))
+        (tokens-length (length tokens)))
+    (loop for i from 0 below tokens-length do
+         (loop for j from (1+ i) to (+ 1 skip i) do
+              (unless (>= j tokens-length)
+                (loop for k from (1+ j) to (+ 1 skip j) do
+                     (unless (>= k tokens-length)
+                       (let ((token1 (if stem-p
+                                         (nlp:stem language (elt tokens i))
+                                         (elt tokens i)))
+                             (token2 (if stem-p
+                                         (nlp:stem language (elt tokens j))
+                                         (elt tokens j)))
+                             (token3 (if stem-p
+                                         (nlp:stem language (elt tokens k))
+                                         (elt tokens k))))
+                         (unless (or (equalp token1 token2)
+                                     (equalp token1 token3)
+                                     (equalp token2 token3))
+                           (let ((key (sort (list token1 token2 token3) 'string-lessp)))
+                           ;;(let ((key (list token1 token2 token3)))
+                             (incf (gethash key skip-grams 0))))))))))
+    skip-grams))
 
 (defmethod extract-ngrams ((tokens sequence) &key include-quadrigrams-p)
   (let ((sentence-length (length tokens))
