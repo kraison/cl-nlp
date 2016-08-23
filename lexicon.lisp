@@ -234,20 +234,16 @@ tags."
   (remove-duplicates
    (loop for e1 in (edits-1 language word) nconcing
         (loop for e2 in (edits-1 language e1)
-           when (multiple-value-bind (value pp)
-                    (gethash e2 (word-freq language) 1)
-                  (declare (ignore value))
-                  pp)
+           when (let ((freq (lookup-word-occurrence language e2)))
+                  (> freq 0))
            collect e2))
    :test 'equal))
 
 (defmethod known ((language language) words)
   "Remove unknown words from list"
   (loop for word in words
-     when (multiple-value-bind (value pp)
-              (gethash word (word-freq language) 1)
-            (declare (ignore value))
-            pp)
+     when (let ((freq (lookup-word-occurrence language word)))
+            (> freq 0))
      collect word))
 
 (defmethod correct-spelling ((language language) word)
