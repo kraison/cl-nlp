@@ -166,10 +166,6 @@ tags."
      counts)
     (when out-file
       (dump-lexicon language out-file :include-pos-p t))
-    ;; FIXME: this should be put into a dbm.  Only used in spelling correction
-    ;; We aren't using the spelling corrector, so to conserve memory, we just
-    ;; won't save it.
-    ;;(setf (word-freq language) frequencies)
     language))
 
 (defgeneric in-lexicon-p (language word pos)
@@ -253,7 +249,7 @@ tags."
                         (known language (edits-1 language word))
                         (known-edits-2 language word)
                         (list word)))
-      (let ((f (gethash n-word (word-freq language) 1)))
+      (let ((f (lookup-word-occurrence language n-word)))
         (when (> f max-f)
           (setq winner n-word max-f f))))
     winner))
@@ -265,7 +261,7 @@ tags."
                                                (known language (edits-1 language word))
                                                (known-edits-2 language word)
                                                (list word))
-                            maximizing (gethash word (word-freq language) 1)
+                            maximizing (lookup-word-occurrence language word)
                             finally (return word)))
                        (tokenize language text))))
     (if join?
