@@ -219,11 +219,9 @@ tags."
          (inserts (loop for (a . b) in splits
                      nconcing (loop for c across (alphabet language)
                                  collect (concatenate 'string a (string c) b)))))
-    (remove-if (lambda (w1)
-                 (> (edit-distance word w1) 1))
-               (remove-duplicates
-                (nconc deletes transposes replaces inserts)
-                :test 'equal))))
+    (delete-duplicates
+     (nconc deletes transposes replaces inserts)
+     :test 'equal)))
 
 (defmethod known-edits-2 ((language language) word)
   "Find edits of 2 characters"
