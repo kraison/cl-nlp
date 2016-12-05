@@ -28,7 +28,7 @@
                :cl-fad
                :s-xml
                :cxml
-               :alexandria)
+               :split-sequence)
   :components ((:file "nlp-package")
                (:file "globals" :depends-on ("nlp-package"))
                (:file "pos-symbols" :depends-on ("globals"))
