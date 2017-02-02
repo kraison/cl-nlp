@@ -20,7 +20,7 @@
                :yacc
                :alexandria
                :porter-stemmer
-               :sb-concurrency
+               #+sbcl :sb-concurrency
                :cl-heap
                :rcl
                :log4cl
