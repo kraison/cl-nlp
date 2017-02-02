@@ -33,17 +33,18 @@ is garbage collected."
          (plexicon-dbm (plexicon-dbm language))
          (observations-dbm (observations-dbm language))
          (word-occurrence-dbm (word-occurrence-dbm language)))
-   (sb-ext:finalize language
-                    (lambda ()
-                      (when (typep word-occurrence-dbm 'kc-dbm)
-                        (dbm-close word-occurrence-dbm))
-                      (when (typep observations-dbm 'kc-dbm)
-                        (dbm-close observations-dbm))
-                      (when (typep lexicon-dbm 'kc-dbm)
-                        (dbm-close lexicon-dbm))
-                      (when (typep plexicon-dbm 'kc-dbm)
-                        (dbm-close plexicon-dbm))))
-   language))
+    #+sbcl
+    (sb-ext:finalize language
+                     (lambda ()
+                       (when (typep word-occurrence-dbm 'kc-dbm)
+                         (dbm-close word-occurrence-dbm))
+                       (when (typep observations-dbm 'kc-dbm)
+                         (dbm-close observations-dbm))
+                       (when (typep lexicon-dbm 'kc-dbm)
+                         (dbm-close lexicon-dbm))
+                       (when (typep plexicon-dbm 'kc-dbm)
+                         (dbm-close plexicon-dbm))))
+    language))
 
 (defmethod make-new-language ((class symbol))
   "Constructor that takes care of creating language objects and lexicon dbms"

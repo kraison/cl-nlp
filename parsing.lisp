@@ -21,11 +21,11 @@
                    (chart-parse (butlast words)))
                (error (c)
                  (declare (ignore c))
-                 (sb-ext:gc :full t)
+                 #+sbcl (sb-ext:gc :full t)
                  (values nil (possible-tags words))))
            (format t "~A~%~A~%~%" tags parse)
            (format log "~A~%~A~%~%" tags parse))))
      corpus)))
 
 (tomuro-cfg)
-(sb-ext:quit)
+(quit)

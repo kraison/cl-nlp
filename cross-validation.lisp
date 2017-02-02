@@ -1,15 +1,17 @@
 (in-package :nlp)
 
-(defun make-random-directory (&optional (root "/var/tmp"))
-  (let ((name nil))
-    (loop until (and name
-                     (not (cl-fad:directory-exists-p name))) do
-         (setq name
-               (format nil "~A/LISP-TEMP-~A-~A/"
-                       root
-                       (sb-posix:getpid)
-                       (get-internal-real-time))))
-    (ensure-directories-exist name)))
+(let ((counter 0))
+  (defun make-random-directory (&optional (root "/var/tmp"))
+    (let ((name nil))
+      (loop until (and name
+                       (not (cl-fad:directory-exists-p name))) do
+           (setq name
+                 (format nil "~A/LISP-TEMP-~A-~A/"
+                         root
+                         #+sbcl (sb-posix:getpid)
+                         #-sbcl (incf counter)
+                         (get-internal-real-time))))
+      (ensure-directories-exist name))))
 
 (defmacro with-temporary-directory ((directory) &body body)
   `(let ((,directory (make-random-directory)))

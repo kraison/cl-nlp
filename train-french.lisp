@@ -15,4 +15,4 @@
 (make-french-db :save-p t)
 (close-language (lookup-language "french"))
 
-(sb-ext:exit :code 0)
+(quit 0)

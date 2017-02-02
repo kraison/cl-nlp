@@ -144,7 +144,7 @@
                 (when (zerop (length word-vector))
                   (return))
                 (let ((pos-seq (deserialize-observations-seq observations-vector))
-                      (word (sb-ext:octets-to-string word-vector)))
+                      (word (babel:octets-to-string word-vector)))
                   (replace-observations-dbm
                    language
                    word
@@ -373,7 +373,7 @@
                 (when (zerop (length word-vector))
                   (return))
                 (let ((pos-seq (deserialize-observations-seq observations-vector))
-                      (word (sb-ext:octets-to-string word-vector)))
+                      (word (babel:octets-to-string word-vector)))
                   (map nil
                        (lambda (pair)
                          (push `((,word ,(car pair)) ,(cdr pair)) r))

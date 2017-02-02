@@ -120,6 +120,7 @@
                    (remove-false-boundaries
                     (mark-sentence-boundaries text))))))
 
+#+sbcl
 (defun experimental-split-sentences (text &optional (language *language*))
   (declare (ignore language))
   (mapcar (lambda (sentence)
@@ -188,6 +189,7 @@
                               (when final-quote (list "''")))))))
         tokens))))
 
+#+sbcl
 (defmethod experimental-tokenize ((language language) text)
   "Split text into tokens."
   (flatten

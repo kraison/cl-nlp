@@ -15,4 +15,4 @@
 (make-spanish-db :save-p t)
 (close-language (lookup-language "spanish"))
 
-(sb-ext:exit :code 0)
+(quit 0)

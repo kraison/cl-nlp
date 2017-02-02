@@ -15,4 +15,4 @@
 (make-german-db :save-p t)
 (close-language (lookup-language "german"))
 
-(sb-ext:exit :code 0)
+(quit 0)

@@ -71,7 +71,7 @@ args: the word and a list of its parts of speech."
                 (when (zerop (length word-vector))
                   (return))
                 (let ((pos-seq (deserialize-pos-seq pos-vector))
-                      (word (sb-ext:octets-to-string word-vector)))
+                      (word (babel:octets-to-string word-vector)))
                   (if collect-p
                       (push (funcall fn word pos-seq) result)
                       (funcall fn word pos-seq))))

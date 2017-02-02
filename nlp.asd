@@ -11,6 +11,7 @@
   :description "Multi-language Natural Language Processing Utilities"
   :long-description "Multi-language Natural Language Processing Utilities."
   :depends-on (:cl-ppcre
+               :babel
                :cl-kyoto-cabinet
                :cffi
                :cl-store
