@@ -341,7 +341,7 @@
     (let* ((states (possible-np-states language pos-tags))
            (viterbi (make-array (list (length states) (length pos-tags))
                                 :element-type 'float
-                                :initial-element 0)))
+                                :initial-element 0.0)))
       ;;(log:debug "TAGS: ~S" pos-tags)
       ;;(log:debug "STATES: ~S" states)
       ;;(log:debug "EXTRACT-PHRASES: Doing word '~A/~A'"
