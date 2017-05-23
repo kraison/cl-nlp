@@ -59,16 +59,16 @@
   (setq word (string-downcase word))
   (with-transaction ((observations-dbm language))
     (let* ((pos-vector (dbm-get (observations-dbm language)
-                                (babel:octets-to-string word)
+                                word
                                 :octets))
            (pos-seq (when (vectorp pos-vector)
                       (deserialize-observations-seq pos-vector))))
       (setq pos-seq (delete pos pos-seq :key 'car))
       (push (cons pos probability) pos-seq)
       (dbm-remove (observations-dbm language)
-                  (babel:octets-to-string word))
+                  word)
       (dbm-put (observations-dbm language)
-               (babel:octets-to-string word)
+               word
                (serialize-observations-seq pos-seq))
       (remhash word (observations language))
       pos-seq)))
@@ -78,9 +78,9 @@
   (with-transaction ((observations-dbm language))
     (let ((pos-vector (serialize-observations-seq pos-seq)))
       (dbm-remove (observations-dbm language)
-                  (babel:octets-to-string word))
+                  word)
       (dbm-put (observations-dbm language)
-               (babel:octets-to-string word)
+               word
                pos-vector)
       (remhash word (observations language))
       pos-seq)))
@@ -89,7 +89,7 @@
   (setq word (string-downcase word))
   (or (gethash word (observations language))
       (let ((pos-string (dbm-get (observations-dbm language)
-                                 (babel:octets-to-string word)
+                                 word
                                  :octets)))
         (when pos-string
           (setf (gethash word (observations language))
@@ -99,7 +99,7 @@
   (setq word (string-downcase word))
   (with-transaction ((observations-dbm language))
     (dbm-remove (observations-dbm language)
-                (babel:octets-to-string word)))
+                word))
   (remhash word (observations language)))
 
 ;;; Word occurrence (word -> occurrences)
@@ -148,14 +148,14 @@
   (with-transaction ((word-occurrence-dbm language))
     (setq word (string-downcase word))
     (let ((occurrences (dbm-get (word-occurrence-dbm language)
-                                (babel:octets-to-string word)
+                                word
                                 :octets)))
       (when occurrences
         (setq occurrences (deserialize-int occurrences))
         (dbm-remove (word-occurrence-dbm language) word))
       (remhash word (word-occurrences language))
       (dbm-put (word-occurrence-dbm language)
-               (babel:octets-to-string word)
+               word
                (serialize-int (+ delta (or occurrences 0)))))))
 
 (defmethod lookup-word-occurrence ((language language) word)
@@ -164,7 +164,7 @@
       (setf (gethash word (word-occurrences language))
             (let ((occurrences
                    (dbm-get (word-occurrence-dbm language)
-                            (babel:octets-to-string word)
+                            word
                             :octets)))
               (if occurrences
                   (deserialize-int occurrences)
@@ -174,7 +174,7 @@
   (setq word (string-downcase word))
   (remhash word (word-occurrences language))
   (with-transaction ((word-occurrence-dbm language))
-    (dbm-remove (word-occurrence-dbm language) (babel:octets-to-string word))))
+    (dbm-remove (word-occurrence-dbm language) word)))
 
 ;;; Regular lexicon (word -> parts of speech)
 (defmethod make-lexicon-dbm ((language language) &optional file)
@@ -210,7 +210,7 @@
   (setq word (string-downcase word))
   (with-transaction ((lexicon-dbm language))
     (let* ((pos-vector (dbm-get (lexicon-dbm language)
-                                (babel:octets-to-string word)
+                                word
                                 :octets))
            (pos-seq (when (vectorp pos-vector)
                       (deserialize-pos-seq pos-vector))))
@@ -218,14 +218,14 @@
         (push pos pos-seq)
         (dbm-remove (lexicon-dbm language) word)
         (dbm-put (lexicon-dbm language)
-                 (babel:octets-to-string word)
+                 word
                  (serialize-pos-seq pos-seq)))
       pos-seq)))
 
 (defmethod lookup-pos-dbm ((language language) word)
   (setq word (string-downcase word))
   (let ((pos-vector (dbm-get (lexicon-dbm language)
-                             (babel:octets-to-string word)
+                             word
                              :octets)))
     (when pos-vector
       (deserialize-pos-seq pos-vector))))
@@ -233,7 +233,7 @@
 (defmethod remove-from-lexicon-dbm ((language language) word)
   (setq word (string-downcase word))
   (with-transaction ((lexicon-dbm language))
-    (dbm-remove (lexicon-dbm language) (babel:octets-to-string word))))
+    (dbm-remove (lexicon-dbm language) word)))
 
 ;;; Probabilistic lexicon (word -> part of speech & probability)
 (defmethod make-plexicon-dbm ((language language) &optional file)
@@ -275,23 +275,23 @@
   (setq word (string-downcase word))
   (with-transaction ((plexicon-dbm language))
     (let* ((pos-vector (dbm-get (plexicon-dbm language)
-                                (babel:octets-to-string word)
+                                word
                                 :octets))
            (pos-seq (when (vectorp pos-vector)
                       (deserialize-ppos-seq pos-vector))))
       (setq pos-seq (delete pos pos-seq :key 'car))
       (push (cons pos probability) pos-seq)
       (dbm-remove (plexicon-dbm language)
-                  (babel:octets-to-string word))
+                  word)
       (dbm-put (plexicon-dbm language)
-               (babel:octets-to-string word)
+               word
                (serialize-ppos-seq pos-seq))
       pos-seq)))
 
 (defmethod lookup-ppos-dbm ((language language) word)
   (setq word (string-downcase word))
   (let ((pos-string (dbm-get (plexicon-dbm language)
-                             (babel:octets-to-string word)
+                             word
                              :octets)))
     (when pos-string
       (deserialize-ppos-seq pos-string))))
@@ -300,7 +300,7 @@
   (setq word (string-downcase word))
   (with-transaction ((plexicon-dbm language))
     (dbm-remove (plexicon-dbm language)
-                (babel:octets-to-string word))))
+                word)))
 
 #|
 (defun test-kyoto-lexicon ()
